@@ -19,11 +19,9 @@ public class Menu {
 	}
 	
 	public void menuPrincipal() {
-		Scanner sc = new Scanner (System.in);
 		System.out.println("Menu\n");
 		System.out.println("1 - Fazer login\n");
 		System.out.println("2 - Fazer cadastro\n");
-		setOpcao(sc.nextInt());
 	}
 	
 	public void menuLogin() {
@@ -37,6 +35,15 @@ public class Menu {
 		email = sc.next();
 		System.out.println("Digite sua senha\n");
 		senha = sc.next();
+	}
+	
+	public void menuPrincipal2() {
+		Scanner sc = new Scanner (System.in);
+		System.out.println("Menu\n");
+		System.out.println("1 - Cadastrar um jogo\n");
+		System.out.println("2 - Procurar um usuário\n");
+		System.out.println("3 - Procurar um jogo\n");
+		setOpcao(sc.nextInt());
 	}
 	
 	public Usuario menuCadastroUsuario() {
