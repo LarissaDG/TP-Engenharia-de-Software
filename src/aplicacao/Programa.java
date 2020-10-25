@@ -15,16 +15,23 @@ public class Programa {
 		do {
 		opcao = sc.nextInt();
 		}while(opcao < 0 || opcao > 2);
-		if(opcao == 0) {
+		switch(opcao) {
+		case 0:
 			System.exit(0);
-		}
-		if(opcao == 1) {
+			break;
+		case 1:
 			menus.menuLogin();
 			System.out.println(opcao);
-		}
-		if(opcao == 2){
+			break;
+		case 2:
 			menus.menuCadastroUsuario();
+			menus.menuPrincipal2();
+			opcao = sc.nextInt();
 			System.out.println(opcao);
+			break;
+		default:
+			System.out.println("Erro: parametro inválido");
+			break;
 		}
 		}while(true);
 		//Se a pessoa digitar 1 vai pro menu de login
