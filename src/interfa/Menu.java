@@ -73,8 +73,6 @@ public class Menu {
 			senha1 = sc.next();
 			System.out.println("Confirme a senha\n");
 			senha2 = sc.next();
-			System.out.println(senha1);
-			System.out.println(senha2);
 		}while(!senha1.equals(senha2));
 		
 		Usuario user = new Usuario(nome,email,estado,cidade,idDocumento,senha1);
