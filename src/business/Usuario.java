@@ -2,8 +2,6 @@ package business;
 
 import java.util.ArrayList;
 
-import java.util.Scanner;
-
 public class Usuario {
 	
 		private String nome;
@@ -78,36 +76,4 @@ public class Usuario {
 			setIdDocumento(idDocumento);
 			setSenha(senha);
 		}
-		
-		public Usuario cadastroUsuario() {
-			Scanner sc = new Scanner (System.in);
-			String nome;
-			String email;
-			String estado;
-			String cidade;
-			int idDocumento;
-			String senha1;
-			String senha2;
-			
-			System.out.println("Cadastro Novo Usuario\n");
-			System.out.println("Digite o nome\n");
-			nome = sc.next();
-			System.out.println("Digite um e-mail\n");
-			email = sc.next();
-			System.out.println("Digite um estado\n");
-			estado = sc.next();
-			System.out.println("Digite uma cidade\n");
-			cidade = sc.next();
-			System.out.println("Digite o CPF ou CNPJ\n");
-			idDocumento = sc.nextInt();
-			do {
-				System.out.println("Digite uma senha\n");
-				senha1 = sc.next();
-				System.out.println("Confirme a senha\n");
-				senha2 = sc.next();
-			}while(senha1 != senha2);
-			
-			Usuario user = new Usuario(nome,email,estado,cidade,idDocumento,senha1);
-		}
-		
 }

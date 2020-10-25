@@ -1,5 +1,7 @@
 package business;
 
+import java.util.Scanner;
+
 public class Jogo {
 	private String nome;
 	private int idade; 
@@ -85,5 +87,5 @@ public class Jogo {
 		setGenero(genero);
 	}
 	
-	
 }
+
