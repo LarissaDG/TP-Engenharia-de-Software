@@ -79,7 +79,7 @@ public class Usuario {
 			setSenha(senha);
 		}
 		
-		public  void cadastroUsuario() {
+		public Usuario cadastroUsuario() {
 			Scanner sc = new Scanner (System.in);
 			String nome;
 			String email;
@@ -107,6 +107,7 @@ public class Usuario {
 				senha2 = sc.next();
 			}while(senha1 != senha2);
 			
+			Usuario user = new Usuario(nome,email,estado,cidade,idDocumento,senha1);
 		}
 		
 }
