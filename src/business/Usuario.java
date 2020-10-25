@@ -10,7 +10,8 @@ public class Usuario {
 		private String cidade;
 		private int idDocumento;
 		private String senha;
-		private  ArrayList<Jogo> jogosParaEmprestimo = new ArrayList<Jogo>();
+		private ArrayList<Jogo> jogosParaEmprestimo = new ArrayList<Jogo>();
+		private ArrayList<Jogo> jogosPegoEmprestado = new ArrayList<Jogo>();
 		
 		public String getNome() {
 			return nome;
@@ -75,5 +76,14 @@ public class Usuario {
 			setCidade(cidade);
 			setIdDocumento(idDocumento);
 			setSenha(senha);
+		}
+
+		public addJogo(String nome,int idade,int qntMinJogadores, int qntMaxJogadores,int tempoEmprestimoDias, String autor, String genero) {
+			Jogo jogoPraAdd = new Jogo(String nome,int idade,int qntMinJogadores, int qntMaxJogadores,int tempoEmprestimoDias, String autor, String genero);
+			this.jogosParaEmprestimo.add(jogoPraAdd);
+		}
+
+		public pegarEmprestado(Jogo jogoEmprestado) {
+			this.jogosPegoEmprestado.add(jogoEmprestado);
 		}
 }
