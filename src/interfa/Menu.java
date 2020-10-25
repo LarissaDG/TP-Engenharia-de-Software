@@ -20,6 +20,7 @@ public class Menu {
 	
 	public void menuPrincipal() {
 		System.out.println("Menu\n");
+		System.out.println("O - Sair\n");
 		System.out.println("1 - Fazer login\n");
 		System.out.println("2 - Fazer cadastro\n");
 	}
@@ -72,7 +73,9 @@ public class Menu {
 			senha1 = sc.next();
 			System.out.println("Confirme a senha\n");
 			senha2 = sc.next();
-		}while(senha1 != senha2);
+			System.out.println(senha1);
+			System.out.println(senha2);
+		}while(!senha1.equals(senha2));
 		
 		Usuario user = new Usuario(nome,email,estado,cidade,idDocumento,senha1);
 		return user;
