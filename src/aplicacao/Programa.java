@@ -2,16 +2,24 @@ package aplicacao;
 
 import java.util.Scanner;
 
+import business.Usuario;
 import interfa.Menu;
 
 public class Programa {
 	public static void main(String[] args) {
 		int opcao = 0;
+		boolean logado = false;
+		Usuario usuarioLogado;
 		Menu menus = new Menu();
 		Scanner sc = new Scanner (System.in);
 		do {
-		//Chama o menu principal
-		menus.menuPrincipal();
+		if(!logado) {
+			//Chama o menu principal
+			menus.menuPrincipal();
+		} else {
+			// Chama o segundo menu
+			menus.menuPrincipal2();
+		}
 		do {
 		opcao = sc.nextInt();
 		}while(opcao < 0 || opcao > 2);
@@ -20,15 +28,31 @@ public class Programa {
 			System.exit(0);
 			break;
 		case 1:
-			menus.menuLogin();
-			System.out.println(opcao);
+			if(!logado) {
+				menus.menuLogin();
+			} else {
+				Jogo novoJogo = menus.menuCadastroJogo();
+				usuarioLogado.addJogo(novoJogo);
+			}
+			System.out.println(opcao);				
 			break;
 		case 2:
-			menus.menuCadastroUsuario();
-			menus.menuPrincipal2();
-			opcao = sc.nextInt();
-			System.out.println(opcao);
+			if(!logado) {
+				usuarioLogado = menus.menuCadastroUsuario();
+				menus.menuPrincipal2();
+				opcao = sc.nextInt();
+			} else {
+				// Procurar Usuario
+			}
+			System.out.println(opcao);				
 			break;
+		case 3:
+			if(logado) {
+				// Abre SGBD com lista dos jogos com indices. Escolhe e manda indice para mudar disponibilidade
+				// Do jogo no app e add o jogo em jogos emprestados do usuario
+			} else {
+				continue;
+			}
 		default:
 			System.out.println("Erro: parametro inválido");
 			break;

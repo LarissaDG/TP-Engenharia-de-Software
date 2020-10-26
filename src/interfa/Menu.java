@@ -53,7 +53,7 @@ public class Menu {
 		String email;
 		String estado;
 		String cidade;
-		int idDocumento;
+		String idDocumento;
 		String senha1;
 		String senha2;
 		
@@ -67,7 +67,7 @@ public class Menu {
 		System.out.println("Digite uma cidade\n");
 		cidade = sc.next();
 		System.out.println("Digite o CPF ou CNPJ\n");
-		idDocumento = sc.nextInt();
+		idDocumento = sc.next();
 		do {
 			System.out.println("Digite uma senha\n");
 			senha1 = sc.next();

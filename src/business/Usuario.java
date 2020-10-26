@@ -78,12 +78,11 @@ public class Usuario {
 			setSenha(senha);
 		}
 
-		public addJogo(String nome,int idade,int qntMinJogadores, int qntMaxJogadores,int tempoEmprestimoDias, String autor, String genero) {
-			Jogo jogoPraAdd = new Jogo(String nome,int idade,int qntMinJogadores, int qntMaxJogadores,int tempoEmprestimoDias, String autor, String genero);
-			this.jogosParaEmprestimo.add(jogoPraAdd);
+		public void addJogo(Jogo jogoPraAdicionar) {
+			this.jogosParaEmprestimo.add(jogoPraAdicionar);
 		}
 
-		public pegarEmprestado(Jogo jogoEmprestado) {
+		public void pegarEmprestado(Jogo jogoEmprestado) {
 			this.jogosPegoEmprestado.add(jogoEmprestado);
 		}
 }
